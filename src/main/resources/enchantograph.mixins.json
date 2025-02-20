@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "package": "xyz.friendtality.enchantograph.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+
+  ],
+  "client": [
+    "Wa"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
