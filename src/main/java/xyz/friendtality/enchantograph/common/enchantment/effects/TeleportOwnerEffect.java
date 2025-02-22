@@ -1,18 +1,16 @@
-package xyz.friendtality.enchantograph.common.enchantment.enchantments;
+package xyz.friendtality.enchantograph.common.enchantment.effects;
 
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.projectile.Projectile;
-import net.minecraft.world.entity.projectile.ThrownTrident;
 import net.minecraft.world.item.enchantment.EnchantedItemInUse;
 import net.minecraft.world.item.enchantment.effects.EnchantmentEntityEffect;
 import net.minecraft.world.phys.Vec3;
 
-public record TeleportEntityEffect() implements EnchantmentEntityEffect {
-    public static final MapCodec<TeleportEntityEffect> CODEC = MapCodec.unit(TeleportEntityEffect::new);
+public record TeleportOwnerEffect() implements EnchantmentEntityEffect {
+    public static final MapCodec<TeleportOwnerEffect> CODEC = MapCodec.unit(TeleportOwnerEffect::new);
 
     @Override
     public void apply(ServerLevel level, int enchantmentLevel, EnchantedItemInUse item, Entity entity, Vec3 origin) {

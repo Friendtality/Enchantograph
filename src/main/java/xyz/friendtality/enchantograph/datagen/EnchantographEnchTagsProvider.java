@@ -23,7 +23,8 @@ public class EnchantographEnchTagsProvider extends EnchantmentTagsProvider {
     protected void addTags(HolderLookup.Provider provider) {
         tag(EnchantographEnchTags.WARP_EXCLUSIVE)
                 .add(Enchantments.MENDING, Enchantments.RIPTIDE);
-
+        tag(EnchantographEnchTags.IMPACT_EXCLUSIVE)
+                .add(Enchantments.FEATHER_FALLING);
 
 
     }

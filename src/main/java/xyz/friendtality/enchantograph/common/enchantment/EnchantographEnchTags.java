@@ -12,4 +12,7 @@ public class EnchantographEnchTags {
 
     public static final TagKey<Enchantment> WARP_EXCLUSIVE = TagKey.create(Registries.ENCHANTMENT,
                 ResourceLocation.fromNamespaceAndPath(VoxelingEnchants.MODID, "warp_exclusive"));
+
+    public static final TagKey<Enchantment> IMPACT_EXCLUSIVE = TagKey.create(Registries.ENCHANTMENT,
+            ResourceLocation.fromNamespaceAndPath(VoxelingEnchants.MODID, "impact_exclusive"));
 }

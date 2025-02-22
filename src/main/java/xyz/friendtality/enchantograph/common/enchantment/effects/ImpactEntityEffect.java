@@ -1,4 +1,4 @@
-package xyz.friendtality.enchantograph.common.enchantment.enchantments;
+package xyz.friendtality.enchantograph.common.enchantment.effects;
 
 import com.mojang.serialization.MapCodec;
 import net.minecraft.server.level.ServerLevel;
