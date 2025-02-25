@@ -5,4 +5,4 @@ The Enchantograph Project is a Minecraft Modification Published under the MIT Li
 So this is basically a to-do list for me hehe:
 - Add exchange to Warp Enchantment
 - Add Impact Particles
-- 
+- Finish Dash

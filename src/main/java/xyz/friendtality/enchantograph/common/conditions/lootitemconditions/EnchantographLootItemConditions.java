@@ -15,9 +15,6 @@ public class EnchantographLootItemConditions {
     public static final DeferredRegister<LootItemConditionType> ENCH_LOOT_ITEM_CON =
             DeferredRegister.create(Registries.LOOT_CONDITION_TYPE, VoxelingEnchants.MODID);
 
-//    public static final Supplier<LootItemConditionType> ENCH_LOCATION_CHECKS =
-//          ENCH_LOOT_ITEM_CON.register("enchantograph_location_checks", ()-> new LootItemConditionType(EnchantographLocationCheks.CODEC));
-
     public static void register(IEventBus eventBus){
         ENCH_LOOT_ITEM_CON.register(eventBus);
     }

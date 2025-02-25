@@ -20,6 +20,7 @@ import xyz.friendtality.enchantograph.common.blockentity.EnchantographBlockEntit
 import xyz.friendtality.enchantograph.common.conditions.lootitemconditions.EnchantographLootItemConditions;
 import xyz.friendtality.enchantograph.common.enchantment.EnchantographEnchantmentComponentTypes;
 import xyz.friendtality.enchantograph.common.enchantment.EnchantographEnchantmentsComponents;
+import xyz.friendtality.enchantograph.common.tags.EnchantographDataComponentTypes;
 
 // The value here should match an entry in the META-INF/neoforge.mods.toml file
 @Mod(VoxelingEnchants.MODID)
@@ -69,6 +70,9 @@ public class VoxelingEnchants
         EnchantographEnchantmentComponentTypes.register(modEventBus);
 
         NeoForge.EVENT_BUS.register(this);
+        EnchantographDataComponentTypes.register(modEventBus);
+
+//        NeoForge.EVENT_BUS.addListener(ClientTick::onClientTick);
 
     }
 
