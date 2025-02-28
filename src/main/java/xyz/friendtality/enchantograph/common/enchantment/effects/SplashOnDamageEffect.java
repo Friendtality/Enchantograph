@@ -14,7 +14,7 @@ import net.minecraft.world.item.enchantment.EnchantedItemInUse;
 import net.minecraft.world.item.enchantment.effects.EnchantmentEntityEffect;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
-import xyz.friendtality.enchantograph.common.tags.EnchantographDataComponentTypes;
+import xyz.friendtality.enchantograph.common.tags.EGDataComponentTypes;
 
 import java.util.List;
 
@@ -24,7 +24,7 @@ public record SplashOnDamageEffect() implements EnchantmentEntityEffect {
     @Override
     public void apply(ServerLevel level, int enchantmentLevel, EnchantedItemInUse item, Entity entity, Vec3 origin) {
         ItemStack stack = item.itemStack();
-        float damage = stack.get(EnchantographDataComponentTypes.STORED_DAMAGE) == null ? 0 : stack.get(EnchantographDataComponentTypes.STORED_DAMAGE);
+        float damage = stack.get(EGDataComponentTypes.STORED_DAMAGE) == null ? 0 : stack.get(EGDataComponentTypes.STORED_DAMAGE);
         if(damage > 0){
             RegistryAccess registryAccess = level.registryAccess();
             double areaMod = 3*Math.sqrt(enchantmentLevel);
@@ -36,7 +36,7 @@ public record SplashOnDamageEffect() implements EnchantmentEntityEffect {
                                 (float) (damage * Math.sqrt(enchantmentLevel)));
                     }
         }
-            stack.remove(EnchantographDataComponentTypes.STORED_DAMAGE);
+            stack.remove(EGDataComponentTypes.STORED_DAMAGE);
     }
 
     @Override

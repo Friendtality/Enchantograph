@@ -7,13 +7,13 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
-import xyz.friendtality.enchantograph.VoxelingEnchants;
+import xyz.friendtality.enchantograph.Enchatograph;
 
 import java.util.concurrent.CompletableFuture;
 
 
-@EventBusSubscriber(modid = VoxelingEnchants.MODID, bus = EventBusSubscriber.Bus.MOD)
-public class EnchantographDataGens {
+@EventBusSubscriber(modid = Enchatograph.MODID, bus = EventBusSubscriber.Bus.MOD)
+public class EGDataGens {
 
 
 
@@ -30,11 +30,11 @@ public class EnchantographDataGens {
         //      new LootTableProvider(packOutput, Collections.emptySet(), List.of(new LootTableProvider.SubProviderEntry(BlockLootTableProvider::new, LootContextParamSets.BLOCK)), lookupProvider));
 
         generator.addProvider(
-                event.includeServer(), new EnchantographDatapackProvider(packOutput, lookupProvider)
+                event.includeServer(), new EGDatapackProvider(packOutput, lookupProvider)
         );
 
         generator.addProvider(
-                event.includeServer(), new EnchantographEnchTagsProvider(packOutput, lookupProvider, fileHelper)
+                event.includeServer(), new EGEnchTantmentTagProvider(packOutput, lookupProvider, fileHelper)
         );
     }
 }

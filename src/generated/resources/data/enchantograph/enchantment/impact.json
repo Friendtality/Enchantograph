@@ -1,0 +1,41 @@
+{
+  "anvil_cost": 1,
+  "description": {
+    "translate": "enchantment.enchantograph.impact"
+  },
+  "effects": {
+    "enchantograph:on_take_damage": [
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:play_sound",
+              "pitch": 1.0,
+              "sound": "minecraft:entity.generic.explode",
+              "volume": 5.0
+            },
+            {
+              "type": "enchantograph:spash_damage"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "exclusive_set": "#enchantograph:impact_exclusive",
+  "max_cost": {
+    "base": 12,
+    "per_level_above_first": 11
+  },
+  "max_level": 3,
+  "min_cost": {
+    "base": 1,
+    "per_level_above_first": 11
+  },
+  "slots": [
+    "feet"
+  ],
+  "supported_items": "#minecraft:enchantable/foot_armor",
+  "weight": 10
+}

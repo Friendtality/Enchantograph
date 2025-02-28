@@ -16,20 +16,20 @@ import net.minecraft.world.item.enchantment.EnchantmentEffectComponents;
 import net.minecraft.world.item.enchantment.effects.AllOf;
 import net.minecraft.world.item.enchantment.effects.PlaySoundEffect;
 import net.minecraft.world.phys.Vec3;
-import xyz.friendtality.enchantograph.VoxelingEnchants;
+import xyz.friendtality.enchantograph.Enchatograph;
 import xyz.friendtality.enchantograph.common.enchantment.effects.PropelOnKeyEffect;
 import xyz.friendtality.enchantograph.common.enchantment.effects.SplashOnDamageEffect;
 import xyz.friendtality.enchantograph.common.enchantment.effects.TeleportOwnerEffect;
 
 
-public class EnchantographEnchants {
+public class EGEnchants {
 
     public static final ResourceKey<Enchantment> WARP = ResourceKey.create(Registries.ENCHANTMENT,
-            ResourceLocation.fromNamespaceAndPath(VoxelingEnchants.MODID,"warp"));
+            ResourceLocation.fromNamespaceAndPath(Enchatograph.MODID,"warp"));
     public static final ResourceKey<Enchantment> IMPACT = ResourceKey.create(Registries.ENCHANTMENT,
-            ResourceLocation.fromNamespaceAndPath(VoxelingEnchants.MODID,"impact"));
+            ResourceLocation.fromNamespaceAndPath(Enchatograph.MODID,"impact"));
     public static final ResourceKey<Enchantment> DASH = ResourceKey.create(Registries.ENCHANTMENT,
-            ResourceLocation.fromNamespaceAndPath(VoxelingEnchants.MODID,"dash"));
+            ResourceLocation.fromNamespaceAndPath(Enchatograph.MODID,"dash"));
 
     public static void bootstrap(BootstrapContext<Enchantment> context) {
         HolderGetter<Enchantment> enchantmentHolderGetter = context.lookup(Registries.ENCHANTMENT);
@@ -49,7 +49,7 @@ public class EnchantographEnchants {
                                         EquipmentSlotGroup.HAND
                                 )
                         )
-                        .exclusiveWith(enchantmentHolderGetter.getOrThrow(EnchantographEnchTags.WARP_EXCLUSIVE))
+                        .exclusiveWith(enchantmentHolderGetter.getOrThrow(EGEnchTags.WARP_EXCLUSIVE))
                         .withEffect(
                                 EnchantmentEffectComponents.HIT_BLOCK,
                                 new TeleportOwnerEffect())
@@ -69,9 +69,9 @@ public class EnchantographEnchants {
                                         EquipmentSlotGroup.FEET
                                 )
                         )
-                        .exclusiveWith(enchantmentHolderGetter.getOrThrow(EnchantographEnchTags.IMPACT_EXCLUSIVE))
+                        .exclusiveWith(enchantmentHolderGetter.getOrThrow(EGEnchTags.IMPACT_EXCLUSIVE))
                         .withEffect(
-                                EnchantographEnchantmentComponentTypes.ON_FALL_DAMAGE.get(),
+                                EGEnchantmentComponentTypes.ON_FALL_DAMAGE.get(),
                                 AllOf.entityEffects(
                                         new PlaySoundEffect(SoundEvents.GENERIC_EXPLODE, ConstantFloat.of(5.0F), ConstantFloat.of(1.0F)),
                                         new SplashOnDamageEffect()
@@ -91,13 +91,12 @@ public class EnchantographEnchants {
                                         EquipmentSlotGroup.FEET
                                 )
                         )
-                        .exclusiveWith(enchantmentHolderGetter.getOrThrow(EnchantographEnchTags.IMPACT_EXCLUSIVE))
+                        .exclusiveWith(enchantmentHolderGetter.getOrThrow(EGEnchTags.IMPACT_EXCLUSIVE))
                         .withEffect(
                                 EnchantmentEffectComponents.TICK,
                                 AllOf.entityEffects(
-                                        new PropelOnKeyEffect(new Vec3(1,0.5,0))
-                                )
-                                )
+                                        new PropelOnKeyEffect(1f)
+                                ))
         );
 
 

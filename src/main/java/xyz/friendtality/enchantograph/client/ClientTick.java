@@ -1,24 +1,25 @@
 package xyz.friendtality.enchantograph.client;
 
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.player.LocalPlayer;
-import net.minecraft.server.level.ServerPlayer;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.api.distmarker.OnlyIn;
+import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.neoforge.client.event.ClientTickEvent;
+import net.neoforged.neoforge.network.PacketDistributor;
+import xyz.friendtality.enchantograph.common.packages.fclient.TryDashPackage;
 
 @OnlyIn(Dist.CLIENT)
 public class ClientTick {
 
     public static void onClientTick(ClientTickEvent.Post event) {
-
-    }
-
-    public static boolean dashPressed() {
-        while (EnchantographKeybinds.DASH.get().consumeClick()) {
-            return true;
+        while(EGKeybinds.DASH.get().consumeClick()){
+            System.out.println("Ahhhh");
+            PacketDistributor.sendToServer(new TryDashPackage(false));
         }
-        return false;
     }
+
+    public static void dash(float velocity) {
+    }
+
+
 
 }

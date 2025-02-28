@@ -15,16 +15,17 @@ import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
-import xyz.friendtality.enchantograph.common.block.EnchantographBlocks;
-import xyz.friendtality.enchantograph.common.blockentity.EnchantographBlockEntityTypes;
-import xyz.friendtality.enchantograph.common.conditions.lootitemconditions.EnchantographLootItemConditions;
-import xyz.friendtality.enchantograph.common.enchantment.EnchantographEnchantmentComponentTypes;
-import xyz.friendtality.enchantograph.common.enchantment.EnchantographEnchantmentsComponents;
-import xyz.friendtality.enchantograph.common.tags.EnchantographDataComponentTypes;
+import xyz.friendtality.enchantograph.client.ClientTick;
+import xyz.friendtality.enchantograph.common.block.EGBlocks;
+import xyz.friendtality.enchantograph.common.blockentity.EGBlockEntityTypes;
+import xyz.friendtality.enchantograph.common.conditions.lootitemconditions.EGLootItemConditions;
+import xyz.friendtality.enchantograph.common.enchantment.EGEnchantmentComponentTypes;
+import xyz.friendtality.enchantograph.common.enchantment.EGEnchantmentsComponents;
+import xyz.friendtality.enchantograph.common.tags.EGDataComponentTypes;
 
 // The value here should match an entry in the META-INF/neoforge.mods.toml file
-@Mod(VoxelingEnchants.MODID)
-public class VoxelingEnchants
+@Mod(Enchatograph.MODID)
+public class Enchatograph
 {
     // Define mod id in a common place for everything to reference
     public static final String MODID = "enchantograph";
@@ -57,22 +58,22 @@ public class VoxelingEnchants
 
     // The constructor for the mod class is the first code that is run when your mod is loaded.
     // FML will recognize some parameter types like IEventBus or ModContainer and pass them in automatically.
-    public VoxelingEnchants(IEventBus modEventBus, ModContainer modContainer)
+    public Enchatograph(IEventBus modEventBus, ModContainer modContainer)
     {
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
 
-        EnchantographBlocks.register(modEventBus);
-        EnchantographBlockEntityTypes.register(modEventBus);
+        EGBlocks.register(modEventBus);
+        EGBlockEntityTypes.register(modEventBus);
 
-        EnchantographEnchantmentsComponents.register(modEventBus);
-        EnchantographLootItemConditions.register(modEventBus);
-        EnchantographEnchantmentComponentTypes.register(modEventBus);
+        EGEnchantmentsComponents.register(modEventBus);
+        EGLootItemConditions.register(modEventBus);
+        EGEnchantmentComponentTypes.register(modEventBus);
 
         NeoForge.EVENT_BUS.register(this);
-        EnchantographDataComponentTypes.register(modEventBus);
+        EGDataComponentTypes.register(modEventBus);
 
-//        NeoForge.EVENT_BUS.addListener(ClientTick::onClientTick);
+        NeoForge.EVENT_BUS.addListener(ClientTick::onClientTick);
 
     }
 

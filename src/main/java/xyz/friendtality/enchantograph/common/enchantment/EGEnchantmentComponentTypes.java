@@ -8,13 +8,13 @@ import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
-import xyz.friendtality.enchantograph.VoxelingEnchants;
+import xyz.friendtality.enchantograph.Enchatograph;
 
 import java.util.List;
 
-public class EnchantographEnchantmentComponentTypes {
+public class EGEnchantmentComponentTypes {
     public static final DeferredRegister<DataComponentType<?>> ENCH_ENCH_COMPONENT_TYPES =
-            DeferredRegister.create(BuiltInRegistries.ENCHANTMENT_EFFECT_COMPONENT_TYPE, VoxelingEnchants.MODID);
+            DeferredRegister.create(BuiltInRegistries.ENCHANTMENT_EFFECT_COMPONENT_TYPE, Enchatograph.MODID);
 
 
 

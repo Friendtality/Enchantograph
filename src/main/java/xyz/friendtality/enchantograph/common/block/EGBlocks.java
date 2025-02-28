@@ -8,9 +8,9 @@ import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import xyz.friendtality.enchantograph.common.block.blocks.UnstableRipperBlock;
 
-import static xyz.friendtality.enchantograph.VoxelingEnchants.MODID;
+import static xyz.friendtality.enchantograph.Enchatograph.MODID;
 
-public class EnchantographBlocks {
+public class EGBlocks {
 
     public static final DeferredRegister<Block> ENCH_BLOCKS = DeferredRegister.createBlocks(MODID);
 

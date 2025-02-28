@@ -1,0 +1,30 @@
+{
+  "anvil_cost": 1,
+  "description": {
+    "translate": "enchantment.enchantograph.warp"
+  },
+  "effects": {
+    "minecraft:hit_block": [
+      {
+        "effect": {
+          "type": "enchantograph:warp"
+        }
+      }
+    ]
+  },
+  "exclusive_set": "#enchantograph:warp_exclusive",
+  "max_cost": {
+    "base": 12,
+    "per_level_above_first": 11
+  },
+  "max_level": 1,
+  "min_cost": {
+    "base": 1,
+    "per_level_above_first": 11
+  },
+  "slots": [
+    "hand"
+  ],
+  "supported_items": "#minecraft:enchantable/trident",
+  "weight": 10
+}
