@@ -3,7 +3,6 @@ package xyz.friendtality.enchantograph.common.enchantment.effects;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
-import net.minecraft.nbt.Tag;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.Entity;
@@ -32,14 +31,14 @@ public record PropelOnKeyEffect(Float acceleration) implements EnchantmentEntity
             }
         }
         if(!stack.has(EGDataComponentTypes.COOLDOWN)){
-            stack.set(EGDataComponentTypes.COOLDOWN, 10);
+            stack.set(EGDataComponentTypes.COOLDOWN, 7);
         }
         if (b){
             boolean dash_used = stack.get(EGDataComponentTypes.DASH_USED.get()) == null || Boolean.TRUE.equals(stack.get(EGDataComponentTypes.DASH_USED.get()));
             if(!dash_used && stack.get(EGDataComponentTypes.COOLDOWN) < 1){
                 PacketDistributor.sendToPlayer((ServerPlayer) entity,new ActuallyDashPackage(acceleration));
                 entity.removeTag("dash");
-                stack.set(EGDataComponentTypes.COOLDOWN, 10);
+                stack.set(EGDataComponentTypes.COOLDOWN, 7);
                 stack.set(EGDataComponentTypes.DASH_USED, true);
             }
         }

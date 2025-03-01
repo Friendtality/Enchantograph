@@ -12,7 +12,7 @@ import org.lwjgl.glfw.GLFW;
 import xyz.friendtality.enchantograph.Enchatograph;
 
 @OnlyIn(Dist.CLIENT)
-@EventBusSubscriber(modid = Enchatograph.MODID,bus = EventBusSubscriber.Bus.MOD)
+@EventBusSubscriber(modid = Enchatograph.MODID,bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class EGKeybinds {
 
     public static final Lazy<KeyMapping> DASH =

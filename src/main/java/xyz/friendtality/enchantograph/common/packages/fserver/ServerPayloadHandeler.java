@@ -9,7 +9,6 @@ import xyz.friendtality.enchantograph.common.packages.fclient.TryDashPackage;
 public class ServerPayloadHandeler {
     public static void handleTryDash(final TryDashPackage data, final IPayloadContext context) {
         context.player().addTag("dash");
-        System.out.println("Wawawa");
     }
 
     public static void handleActuallyDash(final  ActuallyDashPackage data, final  IPayloadContext context){

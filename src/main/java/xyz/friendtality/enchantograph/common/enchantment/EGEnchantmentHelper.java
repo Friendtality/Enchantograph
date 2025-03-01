@@ -16,11 +16,15 @@ public class EGEnchantmentHelper extends EnchantmentHelper {
         runIterationOnEquipment(entity,
                 (enchantmentholder, enchantmentLevel , itemInUse )->{
                     itemInUse.itemStack().set(EGDataComponentTypes.STORED_DAMAGE.get(), damage);
-                    Enchantment.applyEffects(
-                            Objects.requireNonNull(enchantmentholder.value().effects().get(EGEnchantmentComponentTypes.ON_FALL_DAMAGE.get())), // Or whichever other List<ConditionalEffect<T>> you want
-                            Enchantment.entityContext(level,enchantmentLevel,entity,entity.position()),
-                            (effectData) -> {effectData.apply(level,enchantmentLevel,itemInUse,entity,entity.position());} // Use the effectData (in this example, an EnchantmentValueEffect) however you want.
-                    );
+                    if(enchantmentholder.value().effects().get(EGEnchantmentComponentTypes.ON_FALL_DAMAGE.get()) != null) {
+                        Enchantment.applyEffects(
+                                enchantmentholder.value().effects().get(EGEnchantmentComponentTypes.ON_FALL_DAMAGE.get()), // Or whichever other List<ConditionalEffect<T>> you want
+                                Enchantment.entityContext(level, enchantmentLevel, entity, entity.position()),
+                                (effectData) -> {
+                                    effectData.apply(level, enchantmentLevel, itemInUse, entity, entity.position());
+                                } // Use the effectData (in this example, an EnchantmentValueEffect) however you want.
+                        );
+                    }
                 });
     }
 

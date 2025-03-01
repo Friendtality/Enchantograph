@@ -3,8 +3,10 @@ package xyz.friendtality.enchantograph.client;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.api.distmarker.OnlyIn;
 import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.client.event.ClientTickEvent;
 import net.neoforged.neoforge.network.PacketDistributor;
+import xyz.friendtality.enchantograph.Enchatograph;
 import xyz.friendtality.enchantograph.common.packages.fclient.TryDashPackage;
 
 @OnlyIn(Dist.CLIENT)

@@ -13,4 +13,7 @@ public class EGEnchTags {
 
     public static final TagKey<Enchantment> IMPACT_EXCLUSIVE = TagKey.create(Registries.ENCHANTMENT,
             ResourceLocation.fromNamespaceAndPath(Enchatograph.MODID, "impact_exclusive"));
+
+    public static final TagKey<Enchantment> DASH_EXCLUSIVE = TagKey.create(Registries.ENCHANTMENT,
+            ResourceLocation.fromNamespaceAndPath(Enchatograph.MODID, "dash_exclusive"));
 }

@@ -41,10 +41,10 @@ public class EGEnchants {
                 Enchantment.enchantment(
                                 Enchantment.definition(
                                         itemHolderGetter.getOrThrow(ItemTags.TRIDENT_ENCHANTABLE),
-                                        10,
                                         1,
-                                        Enchantment.dynamicCost(1, 11),
-                                        Enchantment.dynamicCost(12, 11),
+                                        1,
+                                        Enchantment.constantCost(28),
+                                        Enchantment.constantCost(30),
                                         1,
                                         EquipmentSlotGroup.HAND
                                 )
@@ -61,10 +61,10 @@ public class EGEnchants {
                 Enchantment.enchantment(
                                 Enchantment.definition(
                                         itemHolderGetter.getOrThrow(ItemTags.FOOT_ARMOR_ENCHANTABLE),
-                                        10,
+                                        5,
                                         3,
-                                        Enchantment.dynamicCost(1, 11),
-                                        Enchantment.dynamicCost(12, 11),
+                                        Enchantment.dynamicCost(10, 8),
+                                        Enchantment.dynamicCost(18, 8),
                                         1,
                                         EquipmentSlotGroup.FEET
                                 )
@@ -83,10 +83,10 @@ public class EGEnchants {
                 Enchantment.enchantment(
                                 Enchantment.definition(
                                         itemHolderGetter.getOrThrow(ItemTags.FOOT_ARMOR_ENCHANTABLE),
-                                        10,
+                                        2,
                                         1,
-                                        Enchantment.dynamicCost(1, 11),
-                                        Enchantment.dynamicCost(12, 11),
+                                        Enchantment.constantCost(25),
+                                        Enchantment.constantCost(30),
                                         1,
                                         EquipmentSlotGroup.FEET
                                 )

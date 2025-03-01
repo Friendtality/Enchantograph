@@ -26,7 +26,7 @@ public class Packages {
                         ServerPayloadHandeler::handleTryDash
                 )
         );
-        registrar.playToClient(
+        registrar.playBidirectional(
                 ActuallyDashPackage.TYPE,
                 ActuallyDashPackage.STREAM_CODEC,
                 new DirectionalPayloadHandler<>(

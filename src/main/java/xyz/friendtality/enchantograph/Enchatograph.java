@@ -21,6 +21,7 @@ import xyz.friendtality.enchantograph.common.blockentity.EGBlockEntityTypes;
 import xyz.friendtality.enchantograph.common.conditions.lootitemconditions.EGLootItemConditions;
 import xyz.friendtality.enchantograph.common.enchantment.EGEnchantmentComponentTypes;
 import xyz.friendtality.enchantograph.common.enchantment.EGEnchantmentsComponents;
+import xyz.friendtality.enchantograph.common.mobeffect.EGMobEffects;
 import xyz.friendtality.enchantograph.common.tags.EGDataComponentTypes;
 
 // The value here should match an entry in the META-INF/neoforge.mods.toml file
@@ -69,11 +70,11 @@ public class Enchatograph
         EGEnchantmentsComponents.register(modEventBus);
         EGLootItemConditions.register(modEventBus);
         EGEnchantmentComponentTypes.register(modEventBus);
+        EGMobEffects.register(modEventBus);
 
         NeoForge.EVENT_BUS.register(this);
         EGDataComponentTypes.register(modEventBus);
 
-        NeoForge.EVENT_BUS.addListener(ClientTick::onClientTick);
 
     }
 
@@ -104,6 +105,8 @@ public class Enchatograph
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event)
         {
+
+            NeoForge.EVENT_BUS.addListener(ClientTick::onClientTick);
             // Some client setup code
             LOGGER.info("HELLO FROM CLIENT SETUP");
             LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());

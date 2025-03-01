@@ -25,17 +25,17 @@
   },
   "exclusive_set": "#enchantograph:impact_exclusive",
   "max_cost": {
-    "base": 12,
-    "per_level_above_first": 11
+    "base": 18,
+    "per_level_above_first": 8
   },
   "max_level": 3,
   "min_cost": {
-    "base": 1,
-    "per_level_above_first": 11
+    "base": 10,
+    "per_level_above_first": 8
   },
   "slots": [
     "feet"
   ],
   "supported_items": "#minecraft:enchantable/foot_armor",
-  "weight": 10
+  "weight": 3
 }

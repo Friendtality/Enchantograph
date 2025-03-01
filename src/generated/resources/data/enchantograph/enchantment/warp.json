@@ -14,17 +14,17 @@
   },
   "exclusive_set": "#enchantograph:warp_exclusive",
   "max_cost": {
-    "base": 12,
-    "per_level_above_first": 11
+    "base": 30,
+    "per_level_above_first": 0
   },
   "max_level": 1,
   "min_cost": {
-    "base": 1,
-    "per_level_above_first": 11
+    "base": 28,
+    "per_level_above_first": 0
   },
   "slots": [
     "hand"
   ],
   "supported_items": "#minecraft:enchantable/trident",
-  "weight": 10
+  "weight": 3
 }
