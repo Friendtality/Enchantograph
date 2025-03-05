@@ -3,7 +3,8 @@
   "package": "xyz.friendtality.enchantograph.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
-    "entity.LivingEntityMixin"
+    "entity.LivingEntityMixin",
+    "item.enchantment.EnchantmentMixin"
   ],
   "client": [
   ],

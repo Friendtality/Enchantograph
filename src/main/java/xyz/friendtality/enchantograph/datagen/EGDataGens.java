@@ -30,11 +30,18 @@ public class EGDataGens {
         //      new LootTableProvider(packOutput, Collections.emptySet(), List.of(new LootTableProvider.SubProviderEntry(BlockLootTableProvider::new, LootContextParamSets.BLOCK)), lookupProvider));
 
         generator.addProvider(
-                event.includeServer(), new EGDatapackProvider(packOutput, lookupProvider)
+                event.includeServer(),
+                new EGDatapackProvider(packOutput, lookupProvider)
         );
 
         generator.addProvider(
-                event.includeServer(), new EGEnchTantmentTagProvider(packOutput, lookupProvider, fileHelper)
+                event.includeServer(),
+                new EGEnchTantmentTagProvider(packOutput, lookupProvider, fileHelper)
+        );
+
+        generator.addProvider(
+                event.includeClient(),
+                new EGParticleDescriptionProvider(packOutput,fileHelper)
         );
     }
 }

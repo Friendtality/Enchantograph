@@ -16,4 +16,18 @@ public class EGEnchTags {
 
     public static final TagKey<Enchantment> DASH_EXCLUSIVE = TagKey.create(Registries.ENCHANTMENT,
             ResourceLocation.fromNamespaceAndPath(Enchatograph.MODID, "dash_exclusive"));
+
+
+
+    public static final TagKey<Enchantment> TERRARIAN = TagKey.create(Registries.ENCHANTMENT,
+            ResourceLocation.fromNamespaceAndPath(Enchatograph.MODID, "terrarian"));
+
+    public static final TagKey<Enchantment> TRUTHLESS = TagKey.create(Registries.ENCHANTMENT,
+            ResourceLocation.fromNamespaceAndPath(Enchatograph.MODID, "truthless"));
+
+    public static final TagKey<Enchantment> AREAL = TagKey.create(Registries.ENCHANTMENT,
+            ResourceLocation.fromNamespaceAndPath(Enchatograph.MODID, "areal"));
+
+    public static final TagKey<Enchantment> NAUTIC = TagKey.create(Registries.ENCHANTMENT,
+            ResourceLocation.fromNamespaceAndPath(Enchatograph.MODID, "nautic"));
 }

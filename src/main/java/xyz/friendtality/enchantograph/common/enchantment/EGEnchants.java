@@ -28,13 +28,14 @@ public class EGEnchants {
             ResourceLocation.fromNamespaceAndPath(Enchatograph.MODID,"warp"));
     public static final ResourceKey<Enchantment> IMPACT = ResourceKey.create(Registries.ENCHANTMENT,
             ResourceLocation.fromNamespaceAndPath(Enchatograph.MODID,"impact"));
+    public static final ResourceKey<Enchantment> ANNIHILATION_CURSE = ResourceKey.create(Registries.ENCHANTMENT,
+            ResourceLocation.fromNamespaceAndPath(Enchatograph.MODID,"annihilation_curse"));
     public static final ResourceKey<Enchantment> DASH = ResourceKey.create(Registries.ENCHANTMENT,
             ResourceLocation.fromNamespaceAndPath(Enchatograph.MODID,"dash"));
 
     public static void bootstrap(BootstrapContext<Enchantment> context) {
         HolderGetter<Enchantment> enchantmentHolderGetter = context.lookup(Registries.ENCHANTMENT);
         HolderGetter<Item> itemHolderGetter = context.lookup(Registries.ITEM);
-        HolderGetter<DamageType> damageTypeHolderGetter = context.lookup(Registries.DAMAGE_TYPE);
         register(
                 context,
                 WARP,
@@ -44,7 +45,7 @@ public class EGEnchants {
                                         1,
                                         1,
                                         Enchantment.constantCost(28),
-                                        Enchantment.constantCost(30),
+                                        Enchantment.constantCost(50),
                                         1,
                                         EquipmentSlotGroup.HAND
                                 )
@@ -74,7 +75,7 @@ public class EGEnchants {
                                 EGEnchantmentComponentTypes.ON_FALL_DAMAGE.get(),
                                 AllOf.entityEffects(
                                         new PlaySoundEffect(SoundEvents.GENERIC_EXPLODE, ConstantFloat.of(5.0F), ConstantFloat.of(1.0F)),
-                                        new SplashOnDamageEffect()
+                                        new SplashOnDamageEffect(false)
                                 ))
         );
         register(
@@ -83,10 +84,10 @@ public class EGEnchants {
                 Enchantment.enchantment(
                                 Enchantment.definition(
                                         itemHolderGetter.getOrThrow(ItemTags.FOOT_ARMOR_ENCHANTABLE),
-                                        2,
                                         1,
-                                        Enchantment.constantCost(25),
-                                        Enchantment.constantCost(30),
+                                        1,
+                                        Enchantment.constantCost(28),
+                                        Enchantment.constantCost(50),
                                         1,
                                         EquipmentSlotGroup.FEET
                                 )
@@ -96,6 +97,27 @@ public class EGEnchants {
                                 EnchantmentEffectComponents.TICK,
                                 AllOf.entityEffects(
                                         new PropelOnKeyEffect(1f)
+                                ))
+        );
+        register(
+                context,
+                ANNIHILATION_CURSE,
+                Enchantment.enchantment(
+                                Enchantment.definition(
+                                        itemHolderGetter.getOrThrow(ItemTags.FOOT_ARMOR_ENCHANTABLE),
+                                        5,
+                                        3,
+                                        Enchantment.dynamicCost(10, 8),
+                                        Enchantment.dynamicCost(18, 8),
+                                        1,
+                                        EquipmentSlotGroup.FEET
+                                )
+                        )
+                        .exclusiveWith(enchantmentHolderGetter.getOrThrow(EGEnchTags.IMPACT_EXCLUSIVE))
+                        .withEffect(
+                                EGEnchantmentComponentTypes.ON_FALL_DAMAGE.get(),
+                                AllOf.entityEffects(
+                                        new SplashOnDamageEffect(true)
                                 ))
         );
 

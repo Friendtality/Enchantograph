@@ -4,5 +4,8 @@ The Enchantograph Project is a Minecraft Modification Published under the MIT Li
 ### Roaadmap without Temporal Stamps
 So this is basically a to-do list for me hehe:
 - Add exchange to Warp Enchantment
-- Add Impact Particles
-- Finish Dash
+- Rework Impact Sounds
+- Categorize Enchantments
+- Balance Levels
+- Finish Bleed Effect (Category: Sacrificial)
+- Work on unstable ripper block

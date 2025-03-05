@@ -16,7 +16,7 @@ import xyz.friendtality.enchantograph.Enchatograph;
 public class EGKeybinds {
 
     public static final Lazy<KeyMapping> DASH =
-            Lazy.of(()-> new KeyMapping(Component.translatable("dash").toString(), GLFW.GLFW_KEY_LEFT_SHIFT, Component.translatable(Enchatograph.MODID).toString()));
+            Lazy.of(()-> new KeyMapping("keybind.enchantograph.dash", GLFW.GLFW_KEY_LEFT_SHIFT, "keybinds.enchantograph.main"));
 
     @SubscribeEvent
     public static void registerKeyMappings(RegisterKeyMappingsEvent event){

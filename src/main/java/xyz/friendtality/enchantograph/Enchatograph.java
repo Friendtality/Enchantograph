@@ -22,6 +22,7 @@ import xyz.friendtality.enchantograph.common.conditions.lootitemconditions.EGLoo
 import xyz.friendtality.enchantograph.common.enchantment.EGEnchantmentComponentTypes;
 import xyz.friendtality.enchantograph.common.enchantment.EGEnchantmentsComponents;
 import xyz.friendtality.enchantograph.common.mobeffect.EGMobEffects;
+import xyz.friendtality.enchantograph.common.particle.EGParticleTypes;
 import xyz.friendtality.enchantograph.common.tags.EGDataComponentTypes;
 
 // The value here should match an entry in the META-INF/neoforge.mods.toml file
@@ -71,6 +72,7 @@ public class Enchatograph
         EGLootItemConditions.register(modEventBus);
         EGEnchantmentComponentTypes.register(modEventBus);
         EGMobEffects.register(modEventBus);
+        EGParticleTypes.register(modEventBus);
 
         NeoForge.EVENT_BUS.register(this);
         EGDataComponentTypes.register(modEventBus);

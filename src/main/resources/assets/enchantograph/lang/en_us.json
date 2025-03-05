@@ -1,0 +1,9 @@
+{
+  "enchantment.enchantograph.dash" : "Dash",
+  "enchantment.enchantograph.impact" : "Impact",
+  "enchantment.enchantograph.warp" : "Warp",
+
+  "keybind.enchantograph.dash":  "Dash",
+  "keybinds.enchantograph.main" : "Enchantograph"
+
+}
